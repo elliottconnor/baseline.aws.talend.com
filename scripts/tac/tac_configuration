@@ -1,0 +1,31 @@
+INSERT INTO tac_quickstart.userrolereference
+(e_id, dtype, e_version, user_user_id, userrole_role_id)
+VALUES
+(2, UserRoleReference, 0, 1, 1),
+(3, UserRoleReference, 0, 1, 2),
+(4, UserRoleReference, 0, 1, 3),
+(5, UserRoleReference, 0, 1, 4)
+ON DUPLICATE KEY UPDATE 
+e_id=VALUES(e_id),
+dtype=VALUES(dtype),
+e_version=VALUES(e_version),
+user_user_id=VALUES(user_user_id),
+userrole_role_id(userrole_role_id);
+
+
+INSERT INTO tac_quickstart.userrolereference
+(dtype, e_version, user_user_id, userrole_role_id)
+select 'UserRoleReference', 0, (select min(id) from user group by id), userrole.id  from userrole where name <> 'Administrator'
+
+
+INSERT INTO tac_quickstart.userrolereference
+(dtype, e_version, user_user_id, userrole_role_id)
+select 'UserRoleReference', 0, (select user.id from user where user.login='admin@company.com'), userrole.id  from userrole where name <> 'Administrator'
+
+-- nexus.libLocationUrl
+-- scheduler.conf.nexus.url
+-- softwareupdate.localRepo.url
+
+update configuration set value='http://localhost:8081/nexus' where configuration.key='nexus.libLocationUrl';
+update tac_quickstart.configuration set value='http://localhost:8081/nexus' where configuration.key='scheduler.conf.nexus.url';
+update tac_quickstart.configuration set value='http://localhost:8081/nexus' where configuration.key='softwareupdate.localRepo.url';

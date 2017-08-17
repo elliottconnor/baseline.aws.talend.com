@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+#set -x
+set -e
+set -u
+
+talend_baseline_deploy_script_path=$(readlink -e "${BASH_SOURCE[0]}")
+talend_baseline_deploy_script_dir="${talend_baseline_deploy_script_path%/*}"
+
+source "${talend_baseline_deploy_script_dir}/../s3-deploy/s3-deploy.sh"
+
+s3_deploy "${talend_baseline_deploy_script_dir}/archive/talend-baseline-env"

@@ -1,0 +1,18 @@
+{
+    "tui": {
+        "tuiUrl": "http://quickstart.eost.s3-website-us-east-1.amazonaws.com/tui-4.5.1.tgz",
+        "tuiTarget": "/home/ec2-user/TUI-4.5.1",
+        "talendRepoDir": "/home/ec2-user/TUI-4.5.1/repo",
+        "quickstartUrl": "https://github.com/EdwardOst/aws-quickstart/archive/0.0.8.tar.gz",
+        "quickstartTarget": "/home/ec2-user/aws-quickstart-0.0.8",
+        "generatedTarget": "/home/ec2-user/generated",
+        "licenseTarget": "/home/ec2-user/TUI-4.5.1/licenses/6.3.1"
+    },
+    "templates": {
+        "networkTemplateUrl": "https://s3.amazonaws.com/quickstart.eost/templates/talend_network.template.json",
+        "nexusTemplateUrl": "https://s3.amazonaws.com/quickstart.eost/templates/talend_nexus.template.json",
+        "logserverTemplateUrl": "https://s3.amazonaws.com/quickstart.eost/templates/talend_logserver.template.json",
+        "tacTemplateUrl": "https://s3.amazonaws.com/quickstart.eost/templates/talend_tac.template.json",
+        "jobserverTemplateUrl": "https://s3.amazonaws.com/quickstart.eost/templates/talend_jobserver.template.json"
+    }
+}

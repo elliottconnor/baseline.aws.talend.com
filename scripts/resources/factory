@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+#set -x
+set -e
+set -u
+
+factory_script_path=$(readlink -e "${BASH_SOURCE[0]}")
+factory_script_dir="${factory_script_path%/*}"
+
+source "${factory_script_dir}/../s3fs/s3fs-util.sh"
+source "${factory_script_dir}/../s3-deploy/s3-deploy.sh"
+source "${factory_script_dir}/../talend-factory/build.sh"
+
+# source environment
+factory_env="${1}"
+[ -f "${factory_env}" ] && source "${factory_env}"
+
+#export DEBUG_LOG=true
+
+talend_factory

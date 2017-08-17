@@ -1,0 +1,9 @@
+# source this file
+
+export GIT_DEPLOY_HUB="https://github.com/EdwardOst"
+export GIT_DEPLOY_REPO="talend-aws-quickstart"
+export GIT_DEPLOY_TARGET="master"
+export GIT_DEPLOY_DIR="${GIT_DEPLOY_REPO}-${GIT_DEPLOY_TARGET}"
+export GIT_DEPLOY_S3_BUCKET="quickstart.aws.eost.com"
+export GIT_DEPLOY_S3_PATH=""
+export GIT_DEPLOY_GRANT="read=uri=http://acs.amazonaws.com/groups/global/AuthenticatedUsers"

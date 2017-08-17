@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+#set -x
+set -e
+set -u
+
+talend_quickstart_deploy_script_path=$(readlink -e "${BASH_SOURCE[0]}")
+talend_quickstart_deploy_script_dir="${talend_quickstart_deploy_script_path%/*}"
+
+source "${talend_quickstart_deploy_script_dir}/../s3-deploy/s3-deploy.sh"
+
+export DEBUG_LOG=true
+
+s3_deploy "${talend_quickstart_deploy_script_dir}/archive/talend-quickstart-env"
