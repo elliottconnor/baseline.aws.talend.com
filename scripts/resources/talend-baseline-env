@@ -1,7 +1,7 @@
 # source this file
 
 export GIT_DEPLOY_HUB="https://github.com/EdwardOst"
-export GIT_DEPLOY_REPO="talend-aws-baseline"
+export GIT_DEPLOY_REPO="baseline.aws.talend.com"
 export GIT_DEPLOY_TARGET="master"
 export GIT_DEPLOY_DIR="${GIT_DEPLOY_REPO}-${GIT_DEPLOY_TARGET}"
 export GIT_DEPLOY_S3_BUCKET="baseline.aws.talend.com"
