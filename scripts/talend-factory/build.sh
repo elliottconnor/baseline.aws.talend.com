@@ -135,7 +135,6 @@ EOF
     # chmod u+x "${repo_mount_dir}/scripts/0.0.9/ec2-metadata"
     # chmod g+x "${repo_mount_dir}/scripts/0.0.9/ec2-metadata"
 }
-}
 
 
 
