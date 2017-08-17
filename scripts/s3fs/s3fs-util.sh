@@ -126,7 +126,4 @@ function s3fs_dir_attrib() {
         find "${subdir}" -type f -name "*" -exec chmod 440 {} \;
         find "${subdir}" -type f -name "*.sh" -exec chmod 550 {} \;
     done
-
-    chmod u+x "${mount_dir}/scripts/0.0.9/ec2-metadata"
-    chmod g+x "${mount_dir}/scripts/0.0.9/ec2-metadata"
 }

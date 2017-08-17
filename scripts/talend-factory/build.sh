@@ -125,12 +125,16 @@ EOF
     try s3fs_config "${access_key}" "${secret_key}"
     try s3fs_mount "${repo_bucket}" "${repo_path}" "${repo_mount_dir}"
 
-    read -p "hit enter to continue with TUI install of ${tui_profile}"
     "${tui_dir}/install" -q -d "${tui_profile}"
     local tui_target_dir="${repo_mount_dir}/tui"
     mkdir -p "${tui_target_dir}"
     cp "${tui_filename}" "${tui_target_dir}"
     try s3fs_dir_attrib "ec2-user" "${repo_mount_dir}"
+
+    # TODO: find a better way to address this
+    # chmod u+x "${repo_mount_dir}/scripts/0.0.9/ec2-metadata"
+    # chmod g+x "${repo_mount_dir}/scripts/0.0.9/ec2-metadata"
+}
 }
 
 
