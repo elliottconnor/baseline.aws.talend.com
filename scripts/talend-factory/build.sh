@@ -125,6 +125,7 @@ EOF
     try s3fs_config "${access_key}" "${secret_key}"
     try s3fs_mount "${repo_bucket}" "${repo_path}" "${repo_mount_dir}"
 
+    read -p "hit enter to continue with TUI install of ${tui_profile}"
     sudo -E "${tui_dir}/install" -q -d "${tui_profile}"
     local tui_target_dir="${repo_mount_dir}/tui"
     mkdir -p "${tui_target_dir}"

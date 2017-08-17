@@ -78,8 +78,12 @@ function s3fs_mount() {
     local s3_mount_root="${4:-${s3_mount_dir}}"
     local s3fs_umask="${5:-037}"
 
+set -x
     sudo mkdir -p "${s3_mount_dir}"
-    sudo chown -R "${USER}:${USER}" "${s3_mount_root}"
+
+#   sudo chown -R "${USER}:${USER}" "${s3_mount_root}"
+    sudo chown -R "ec2-user:ec2-user" "${s3_mount_root}"
+
     [ -n "${s3_path}" ] && [ "${s3_path:0:1}" != "/" ] && s3_path="/${s3_path}"
     [ -n "${s3_path}" ] && s3_path=":${s3_path}"
 
