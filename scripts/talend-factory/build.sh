@@ -126,11 +126,11 @@ EOF
     try s3fs_mount "${repo_bucket}" "${repo_path}" "${repo_mount_dir}"
 
     read -p "hit enter to continue with TUI install of ${tui_profile}"
-    sudo -E "${tui_dir}/install" -q -d "${tui_profile}"
+    "${tui_dir}/install" -q -d "${tui_profile}"
     local tui_target_dir="${repo_mount_dir}/tui"
     mkdir -p "${tui_target_dir}"
     cp "${tui_filename}" "${tui_target_dir}"
-    sudo -E try s3fs_dir_attrib "ec2-user" "${repo_mount_dir}"
+    try s3fs_dir_attrib "ec2-user" "${repo_mount_dir}"
 }
 
 
